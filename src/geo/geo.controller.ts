@@ -17,4 +17,9 @@ export class GeoController {
   async process(@Body() dto: CoordinatesDto) {
     return await this.geoService.processCoordinates(dto);
   }
+
+  @Post('healthcheck')
+  async healthcheck() {
+    return await this.geoService.validateServiceHealth();
+  }
 }
