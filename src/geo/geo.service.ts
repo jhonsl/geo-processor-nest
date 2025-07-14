@@ -30,7 +30,7 @@ export class GeoService {
     try {
       const response = await firstValueFrom(
         this.http.get(
-          `${this.configService.get<string>('BACKEND_URL')}/geo/healthcheck`,
+          `${this.configService.get<string>('BACKEND_URL')}/healthcheck`,
         ),
       );
       return response.data;
