@@ -3,6 +3,7 @@ import {
   Post,
   Body,
   UseInterceptors,
+  Get,
 } from '@nestjs/common';
 import { GeoService } from './geo.service';
 import { CoordinatesDto } from './dto/input.dto';
@@ -18,7 +19,7 @@ export class GeoController {
     return await this.geoService.processCoordinates(dto);
   }
 
-  @Post('healthcheck')
+  @Get('healthcheck')
   async healthcheck() {
     return await this.geoService.validateServiceHealth();
   }
